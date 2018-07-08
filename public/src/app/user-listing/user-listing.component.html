@@ -1,0 +1,26 @@
+<div class="box">
+  <img src="{{item.image}}" alt="">
+  <p>Title: {{item.title}}</p>
+  <p>Description: {{item.description}}</p>
+  <p>Price: {{item.price}}</p>
+  <p>Location: {{item.location}}</p>
+  <button class="btn" (click)="startEdit()">Edit</button>
+  <button class="btn" (click)="deleteProduct(item)">Delete</button>
+  <div *ngIf="edit">
+    <form (submit)="updateProduct()">
+      <input type="hidden" name="newListing._id" [(ngModel)]="newListing._id" value="{{newListing._id}}">
+      <label for="">Title: </label>
+      <input type="text" name="newListing.title" [(ngModel)]="newListing.title" value="{{newListing.title}}"><br>
+      <label for="">Description: </label>
+      <input type="text" name="newListing.description" [(ngModel)]="newListing.description" value="{{newListing.description}}"><br>
+      <label for="">Price: </label>
+      <input type="text" name="newListing.price" [(ngModel)]="newListing.price" value="{{newListing.price}}"><br>
+      <label for="">Location: </label>
+      <input type="text" name="newListing.location" [(ngModel)]="newListing.location" value="{{newListing.location}}"><br>
+      <label for="">Image: </label>
+      <input type="text" name="newListing.image" [(ngModel)]="newListing.image" value="{{newListing.image}}"><br>
+      <button type="submit">Update</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+</div>

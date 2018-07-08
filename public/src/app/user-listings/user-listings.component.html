@@ -1,0 +1,3 @@
+<app-home></app-home>
+<app-new-listing [user]='user'></app-new-listing>
+<app-user-listing ng-if="products" *ngFor="let item of products" [item]='item'></app-user-listing>
