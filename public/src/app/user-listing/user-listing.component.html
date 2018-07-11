@@ -5,7 +5,7 @@
   <p>Price: {{item.price}}</p>
   <p>Location: {{item.location}}</p>
   <button class="btn" (click)="startEdit()">Edit</button>
-  <button class="btn" (click)="deleteProduct(item)">Delete</button>
+  <button class="btn btn-danger" (click)="deleteProduct(item)">Delete</button>
   <div *ngIf="edit">
     <form (submit)="updateProduct()">
       <input type="hidden" name="newListing._id" [(ngModel)]="newListing._id" value="{{newListing._id}}">
@@ -19,8 +19,8 @@
       <input type="text" name="newListing.location" [(ngModel)]="newListing.location" value="{{newListing.location}}"><br>
       <label for="">Image: </label>
       <input type="text" name="newListing.image" [(ngModel)]="newListing.image" value="{{newListing.image}}"><br>
-      <button type="submit">Update</button>
-      <button (click)="cancelEdit()">Cancel</button>
+      <button type="submit" class="btn btn-success">Update</button>
+      <button (click)="cancelEdit()" class="btn btn-danger">Cancel</button>
     </form>
   </div>
 </div>
