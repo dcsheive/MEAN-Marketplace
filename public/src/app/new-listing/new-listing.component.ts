@@ -30,7 +30,7 @@ export class NewListingComponent implements OnInit {
         console.log(data);
       } else {
         this._ls.notify(data, 'create');
-        $('#new').modal('hide');
+        $('#newForm').modal('hide');
       }
     });
     this.init();

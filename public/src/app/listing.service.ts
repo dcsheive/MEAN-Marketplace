@@ -29,6 +29,9 @@ export class ListingService {
   getAll(cb) {
     this._httpClient.get('/api/products/').subscribe(data => cb(data));
   }
+  getRandom(cb) {
+    this._httpClient.get('/api/products/random').subscribe(data => cb(data));
+  }
   getAllMy(id, cb) {
     this._httpClient.get('/api/myproducts/' + id).subscribe(data => cb(data));
   }

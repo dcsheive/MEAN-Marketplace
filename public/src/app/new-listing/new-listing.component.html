@@ -1,6 +1,6 @@
 <h1>Add New Listing</h1>
-<button type="button" class="btn" data-toggle="modal" data-target="#new">Add New Listing</button>
-<div class="modal" tabindex="-1" role="dialog" id="new">
+<button type="button" class="btn" data-toggle="modal" data-target="#newForm">Add New Listing</button>
+<div class="modal" tabindex="-1" role="dialog" id="newForm">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form (submit)="addListing()" #formData='ngForm' id="form1">
+        <form (submit)="addListing()" #formData='ngForm' id="form3">
           <label for="">Title: </label>
           <input type="text" name="newListing.title" class="form-control" [(ngModel)]="newListing.title" minlength="4" required #title="ngModel"><br>
           <p *ngIf="!title.valid && title.dirty" class="red">Title must be 4 characters</p>
@@ -28,7 +28,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button form="form1" *ngIf="formData.valid" type="submit" id="button1">Add</button>
+        <button form="form3" *ngIf="formData.valid" type="submit" id="button3">Add</button>
       </div>
     </div>
   </div>

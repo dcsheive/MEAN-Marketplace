@@ -14,8 +14,8 @@ export class DayComponent implements OnInit {
     this.getBike();
   }
   getBike() {
-    this._ls.getAll(data => {
-      this.item = data[Math.trunc(Math.random() * data.length)];
+    this._ls.getRandom(data => {
+      this.item = data[0];
     });
   }
 

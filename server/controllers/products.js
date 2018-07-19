@@ -46,6 +46,17 @@ class ProductController {
             }
         })
     }
+    getRandom(req,res){
+        Product.aggregate([{$sample:{size: 1}}], function(err,product){
+            if (err){
+                return res.json({message: "Could not find Product: "+req.params.id, error: err})
+            }
+            else{
+                return res.json(product)
+            }    
+        })
+
+    }
     update(req,res){
         Product.findById(req.params.id, function(err, product){
             if (err){
