@@ -21,6 +21,7 @@ class UserController {
                                 return res.json({message: "register failed", err:error})
                             }
                             else {
+                                req.session.user_id = user._id
                                 return res.json(user)
                             }
                         })
